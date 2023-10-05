@@ -199,7 +199,7 @@ AUTH_USER_MODEL = 'auth.User'
 
 
 
-EMAIL_BACKEND = ['django.core.mail.backends.smtp.EmailBackend','django.core.mail.backends.console.EmailBackend']
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mailhog'  # Use the service name defined in docker-compose.yml
 EMAIL_PORT = 1025  # The SMTP port exposed by MailHog
 
