@@ -150,17 +150,17 @@ SITE_ID = 1
 # settings.py
 
 # Define the URL prefix for static files
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
 
 # Define the directories where static files are located
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_root')]
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_root')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
