@@ -2,6 +2,7 @@ import os
 
 
 from pathlib import Path
+import dj_database_url
 
 #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -16,12 +17,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY='w7a8555a@lj8nax7tem0caa2f2rjm2ahsascyf83sa5alyv68vea'
+SECRET_KEY=os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =True
+DEBUG =os.environ.get("DEBUG","False").lower=="true"
 
-ALLOWED_HOSTS =[]#['technokraftzonline.azurewebsites.net', 'technokraftz.com', '*']
+ALLOWED_HOSTS =os.environ.get("ALLOWED_HOSTS").split(" ")#['technokraftzonline.azurewebsites.net', 'technokraftz.com', '*']
 
 
 #CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split('')
@@ -93,6 +94,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+database_url=os.environ.get("DATABASE_URL")
+DATABASES['default']=dj_database_url.parse(database_url)
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
