@@ -17,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY=os.environ.get("SECRET_KEY")
+SECRET_KEY='djsjdddnmdsnms.,md.smd'#os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =os.environ.get("DEBUG","False").lower=="true"
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    #'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'app',
     'user',
@@ -94,7 +95,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url=os.environ.get("DATABASE_URL")
+database_url='postgres://technokraftz_render_user:TLg85rA57PYyOOD2bc37foZ16VXJp3ZD@dpg-ckf9jg6npffc73cdr7t0-a.oregon-postgres.render.com/technokraftz_render'#os.environ.get("DATABASE_URL")
 DATABASES['default']=dj_database_url.parse(database_url)
 
 # DATABASES = {
@@ -150,22 +151,18 @@ SITE_ID = 1
 # settings.py
 
 # Define the URL prefix for static files
-STATIC_URL = 'static/'
+#STATIC_URL = 'static/'
 
 # Define the directories where static files are located
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_root')]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
-
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_root')]
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static_root'),
-]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # MEDIA_URL=static_or_media_list[1]
