@@ -28,10 +28,13 @@ SECRET_KEY=os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =os.environ.get("DEBUG","False").lower=="true"
 
-ALLOWED_HOSTS =os.environ.get("ALLOWED_HOSTS").split(" ")
+#ALLOWED_HOSTS =os.environ.get("ALLOWED_HOSTS").split(" ")
+ALLOWED_HOSTS =['technokraftz.com', 'www.technokraftz.com', 'technokraftz-academy.onrender.com']
 
 
 #CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split('')
+CSRF_TRUSTED_ORIGINS = ['technokraftz.com', 'www.technokraftz.com', 'technokraftz-academy.onrender.com']
+
 
 
 # SECURE_SSL_REDIRECT = \
