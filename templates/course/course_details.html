@@ -46,7 +46,7 @@
                 <div class="d-md-flex align-items-center mb-5">
                     <div class="border rounded-circle d-inline-block mb-4 mb-md-0 me-md-6 me-lg-4 me-xl-6">
                         <div class="p-2">
-                            <img src="/{{course.author.author_profile}}" alt="..." class="rounded-circle" width="68" height="68">
+                            <img src="{{course.author.author_image.author_image.url}}" alt="..." class="rounded-circle" width="68" height="68">
                         </div>
                     </div>
 
@@ -68,7 +68,7 @@
                             </div>
 
                             <div class="font-size-sm ms-lg-3">
-                                <span>9.45 (9.8k+ reviews)</span>
+                                <span>4.89 (9.8k+ reviews)</span>
                             </div>
                         </div>
                     </div>
@@ -267,7 +267,7 @@
                     <div class="d-flex align-items-center mb-6">
                         <div class="d-inline-block rounded-circle border me-6 p-2">
                             <div class="avatar avatar-size-120">
-                                <img src="/{{course.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
+                                <img src="{{course.author.author_image.author_image.url}}" alt="..." class="avatar-img rounded-circle">
                             </div>
                         </div>
                         <div class="media-body">
@@ -535,7 +535,7 @@
                             </svg>
 
                         </div>
-                        <img class="rounded shadow-light-lg" src="/media/{{course.featured_image}}" alt="...">
+                        <img class="rounded shadow-light-lg" src="{{course.course_image.course_image.url}}" alt="...">
                     </a>
                     
 

@@ -12,12 +12,18 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
+#cloudinary imports
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY='djsjdddnmdsnms.,md.smd'#os.environ.get("SECRET_KEY")
+SECRET_KEY=os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =os.environ.get("DEBUG","False").lower=="true"
@@ -46,8 +52,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'user',
+    'photo',
     'bootstrap4',
     'crispy_forms',
+    'cloudinary',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -95,7 +103,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url='postgres://technokraftz_render_user:TLg85rA57PYyOOD2bc37foZ16VXJp3ZD@dpg-ckf9jg6npffc73cdr7t0-a.oregon-postgres.render.com/technokraftz_render'#os.environ.get("DATABASE_URL")
+database_url=os.environ.get("DATABASE_URL")
 DATABASES['default']=dj_database_url.parse(database_url)
 
 # DATABASES = {
@@ -204,3 +212,13 @@ EMAIL_PORT = 1025  # The SMTP port exposed by MailHog
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #CSRF_TRUSTED_ORIGINS= ['https://technokraftzonline.azurewebsites.net', 'https://technokraftz.com', 'http://technokraftz.com']
+
+
+#Cloudinary - Django integration
+
+cloudinary.config(
+    cloud_name="diso33vtf",
+    api_key="994881855294481",
+    api_secret="pcd6yLrPrD0SrMmUPvY9EypzDvY",
+)
+

@@ -98,7 +98,7 @@
                                     </div>
 
                                     <a href="{{i.get_absolute_url}}" class="card-img sk-thumbnail img-ratio-9 d-block">
-                                        <img class="rounded shadow-light-lg" src="media/{{i.featured_image}}" alt="...">
+                                        <img class="rounded shadow-light-lg" src="{{i.course_image.course_image.url}}" alt="...">
                                     </a>
 
                                     <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
@@ -110,7 +110,7 @@
                                 <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
                                     <a href="#" class="d-block">
                                         <div class="avatar avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
-                                            <img src="{{i.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{i.author.author_image.author_image.url}}" alt="..." class="avatar-img rounded-circle">
                                         </div>
                                     </a>
 
@@ -204,7 +204,7 @@
                                     </div>
 
                                     <a href="{%url 'login'%}" class="card-img sk-thumbnail img-ratio-9 d-block">
-                                        <img class="rounded shadow-light-lg" src="media/{{i.featured_image}}" alt="...">
+                                        <img class="rounded shadow-light-lg" src="{{i.course_image.course_image.url}}" alt="...">
                                     </a>
 
                                     <span class="badge sk-fade-bottom badge-lg badge-primary badge-pill badge-float bottom-0 left-0 mb-4 ms-4 fw-bold">
@@ -216,7 +216,7 @@
                                 <div class="card-footer px-2 pb-2 mb-1 pt-4 position-relative">
                                     <a href="{%url 'login'%}" class="d-block">
                                         <div class="avatar avatar-xl badge-float position-absolute top-0 right-0 mt-n6 me-5 rounded-circle shadow border border-white border-w-lg">
-                                            <img src="{{i.author.author_profile}}" alt="..." class="avatar-img rounded-circle">
+                                            <img src="{{i.author.author_image.author_image.url}}" alt="..." class="avatar-img rounded-circle">
                                         </div>
                                     </a>
 

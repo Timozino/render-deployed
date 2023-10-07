@@ -15,6 +15,7 @@ urlpatterns = [
     path(settings.ADMIN_URL, admin.site.urls),
     path('', include('app.urls')),
     path('accounts/', include('user.urls')),
+    path('photos/', include('photo.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('login', views.login, name='login'),
     #path('ads.txt', TemplateView.as_view(template_name='ads.txt', content_type='text/plain')),

@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User
-#from user.models import User
+from photo.models import Library, AuthorImage
 from django.db import models
 from django.utils.text import slugify
 from django.db.models.signals import pre_save
@@ -22,7 +22,8 @@ class Categories(models.Model):
         return category
     
 class Author(models.Model):
-    author_profile = models.ImageField(upload_to="media/author")
+    author_image=models.ForeignKey(AuthorImage, on_delete=models.CASCADE, null=True)
+   # author_profile = models.ImageField(upload_to="media/author")
     name = models.CharField(max_length=100, null=True)
     about_author = models.TextField()
 
@@ -47,7 +48,8 @@ class Course(models.Model):
         ('DRAFT', 'DRAFT'),
     )
 
-    featured_image = models.ImageField(upload_to="media/featured_img",null=True)
+    course_image=models.ForeignKey(Library, on_delete=models.CASCADE, null=True)
+    #featured_image = models.ImageField(upload_to="media/featured_img",null=True)
     featured_video = models.CharField(max_length=300,null=True)
     title = models.CharField(max_length=500)
     created_at = models.DateField(auto_now_add=True)

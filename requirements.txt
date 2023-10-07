@@ -51,6 +51,7 @@ tzdata==2023.3
 urllib3==2.0.4
 virtualenv==20.24.5
 Werkzeug==2.2.3
+cloudinary==1.36.0
 whitenoise==6.5.0
 #wikipedia==1.4.0
 #Wikipedia-API==0.6.0
