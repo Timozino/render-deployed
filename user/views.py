@@ -16,9 +16,9 @@ def login(request):
         #print('ode')
         
         user=EmailBackEnd.authenticate(request, username=email, password=password)
-        print('jojojo',user)
-        if user is not None:
-            print('jo')
+        #print('jojojo',user)
+        if user is not None and user.is_active:
+         #   print('jo')
             auth.login(request, user)
             return redirect('home')
         
@@ -70,7 +70,7 @@ def register(request):
             
             user.set_password(password)
             user.save()
-            return redirect('login')
+            return redirect('home')
     
     return render(request, 'registration/register.html')
 
