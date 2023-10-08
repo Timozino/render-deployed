@@ -179,29 +179,50 @@ def my_course(request):
     context['course']=course
     return render(request, 'course/my-course.html', context)
 
-def watch_course(request, slug):
+# def watch_course(request, slug):
     
-    course=Course.objects.filter(slug=slug)
-    lecture=request.GET.get('lecture')
-    #course_id=Course.objects.get(id=id)
-    #check_enroll=UserCourse.objects.get(user=request.user,course=course_id)
-    video=Video.objects.get(id=lecture)
-    # course_id=Course.objects.get(id=id)
-    # course=Course.objects.filter(id=id)
-    # try:
-    #     check_enroll=UserCourse.objects.get(user=request.user,course=course_id)
-    #     video=Video.objects.get(id=lecture)
-    if course.exists():
-        course=course.first()
-    else:
-        return redirect('404')
+#     course=Course.objects.filter(slug=slug)
+#     lecture=request.GET.get('lecture')
+#     #course_id=Course.objects.get(id=id)
+#     #check_enroll=UserCourse.objects.get(user=request.user,course=course_id)
+#     video=Video.objects.get(id=lecture)
+#     # course_id=Course.objects.get(id=id)
+#     # course=Course.objects.filter(id=id)
+#     # try:
+#     #     check_enroll=UserCourse.objects.get(user=request.user,course=course_id)
+#     #     video=Video.objects.get(id=lecture)
+#     if course.exists():
+#         course=course.first()
+#     else:
+#         return redirect('404')
         
-    # except UserCourse.DoesNotExist:
-    #     return redirect('404')
-    context={}
-    context['course']=course
-    context['video']=video
-    context['lecture']=lecture
+#     # except UserCourse.DoesNotExist:
+#     #     return redirect('404')
+#     context={}
+#     context['course']=course
+#     context['video']=video
+#     context['lecture']=lecture
+#     return render(request, 'course/watch-course.html', context)
+
+def watch_course(request, slug):
+    course = get_object_or_404(Course, slug=slug)
+    lecture = request.GET.get('lecture')
+
+    # Retrieve the lesson based on the provided lecture primary key (pk)
+    lesson = get_object_or_404(Lesson, pk=lecture, course=course)
+
+    # Retrieve the video associated with the lesson
+    video = Video.objects.filter(lesson=lesson).first()
+
+    if video is None:
+        return redirect('404')
+
+    context = {
+        'course': course,
+        'video': video,
+        'lecture': lecture,
+    }
+    
     return render(request, 'course/watch-course.html', context)
 
 # @login_required
