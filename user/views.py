@@ -20,7 +20,7 @@ def login(request):
         if user is not None and user.is_active:
          #   print('jo')
             auth.login(request, user)
-            return redirect('login')
+            return redirect('home')
         
         else:
             messages.info(request, 'Invalid Credential')
