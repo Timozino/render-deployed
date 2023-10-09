@@ -111,7 +111,7 @@ class Lesson(models.Model):
     name=models.CharField(max_length=200)
     
     class Meta:
-        ordering=['-name']
+        ordering=['id']
     
     def __str__(self):
         return self.name + " - " + self.course.title
