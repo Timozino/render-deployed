@@ -205,25 +205,29 @@ def my_course(request):
 #     return render(request, 'course/watch-course.html', context)
 
 def watch_course(request, slug):
-    course = get_object_or_404(Course, slug=slug)
+    # Retrieve the course by its slug
+    try:
+        course = Course.objects.get(slug=slug)
+    except Course.DoesNotExist:
+        # Handle the case where the course does not exist
+        return redirect('error')
+
+    # Get the lecture parameter from the request's GET parameters
     lecture = request.GET.get('lecture')
 
-    # Retrieve the lesson based on the provided lecture primary key (pk)
-    lesson = get_object_or_404(Lesson, pk=lecture, course=course)
-
-    # Retrieve the video associated with the lesson
-    video = Video.objects.filter(lesson=lesson).first()
-
-    if video is None:
-        return redirect('404')
+    try:
+        # Use the title of the course and lecture parameter to retrieve the video
+        video = Video.objects.get(title=lecture, course__title=course.title)
+    except Video.DoesNotExist:
+        raise Http404("Video does not exist")
 
     context = {
         'course': course,
         'video': video,
-        'lecture': lecture,
     }
-    
+
     return render(request, 'course/watch-course.html', context)
+
 
 # @login_required
 # def watch_course(request, slug):
