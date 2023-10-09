@@ -70,7 +70,7 @@ def register(request):
             
             user.set_password(password)
             user.save()
-            return redirect('home')
+            return redirect('login')
     
     return render(request, 'registration/register.html')
 
