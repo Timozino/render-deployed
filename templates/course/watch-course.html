@@ -1,7 +1,3 @@
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -404,7 +400,7 @@
                 </div>
 
                 <!-- Back to Course -->
-                <a href="{% url 'course_details'%}'" class="btn btn-sm btn-primary ms-md-6 px-6 mb-3 mb-md-0 flex-shrink-0">Back to Course</a>
+                <a href="#" class="btn btn-sm btn-primary ms-md-6 px-6 mb-3 mb-md-0 flex-shrink-0">Back to Course</a>
             </div>
         </div>
     </header>
@@ -561,130 +557,8 @@
                         </a>
                     </div>
 
-                    <h3 class="mb-6">Comment</h3>
-                    <ul class="list-unstyled pt-2">
-                        <li class="media d-flex">
-                            <div class="avatar avatar-xxl me-3 me-md-6 flex-shrink-0">
-                                <img src="{% static 'assets/img/avatars/avatar-1.jpg' %}" alt="..." class="avatar-img rounded-circle">
-                            </div>
-                            <div class="media-body flex-grow-1">
-                                <div class="d-md-flex align-items-center mb-5">
-                                    <div class="me-auto mb-4 mb-md-0">
-                                        <h5 class="mb-0"></h5>
-                                        <p class="font-size-sm font-italic"></p>
-                                    </div>
-                                    <div class="star-rating">
-                                        <div class="rating" style="width:100%;"></div>
-                                    </div>
-                                </div>
-                                <p class="mb-6 line-height-md"></p>
-                            </div>
-                        </li>
-                        <li class="media d-flex">
-                            <div class="avatar avatar-xxl me-3 me-md-6 flex-shrink-0">
-                                <img src="{% static 'assets/img/avatars/avatar-2.jpg' %}" alt="..." class="avatar-img rounded-circle">
-                            </div>
-                            <div class="media-body flex-grow-1">
-                                <div class="d-md-flex align-items-center mb-5">
-                                    <div class="me-auto mb-4 mb-md-0">
-                                        <h5 class="mb-0">Alex Morgan</h5>
-                                        <p class="font-size-sm font-italic">Nice Course</p>
-                                    </div>
-                                    <div class="star-rating">
-                                        <div class="rating" style="width:100%;"></div>
-                                    </div>
-                                </div>
-                                <p class="mb-6 line-height-md"></p>
-                            </div>
-                        </li>
-                    </ul>
-
-                    <div class="border shadow rounded p-6 p-md-9">
-                        <h3 class="mb-2">Add Reviews & Rate</h3>
-                        <div class=""></div>
-                        <form>
-                            <div class="clearfix">
-                                <fieldset class="slect-rating mb-3">
-                                    <input type="radio" id="star5" name="rating" value="5" />
-                                    <label class = "full" for="star5" title="Awesome - 5 stars"></label>
-
-                                    <input type="radio" id="star4half" name="rating" value="4 and a half" />
-                                    <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-
-                                    <input type="radio" id="star4" name="rating" value="4" />
-                                    <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
-
-                                    <input type="radio" id="star3half" name="rating" value="3 and a half" />
-                                    <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-
-                                    <input type="radio" id="star3" name="rating" value="3" />
-                                    <label class = "full" for="star3" title="Meh - 3 stars"></label>
-
-                                    <input type="radio" id="star2half" name="rating" value="2 and a half" />
-                                    <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-
-                                    <input type="radio" id="star2" name="rating" value="2" />
-                                    <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
-
-                                    <input type="radio" id="star1half" name="rating" value="1 and a half" />
-                                    <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-
-                                    <input type="radio" id="star1" name="rating" value="1" />
-                                    <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
-
-                                    <input type="radio" id="starhalf" name="rating" value="half" />
-                                    <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                </fieldset>
-                            </div>
-
-                            <div class="form-group mb-6">
-                                <label for="exampleInputTitle1">Review Title</label>
-                                <input type="text" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="Courses">
-                            </div>
-
-                            <div class="form-group mb-6">
-                                <label for="exampleFormControlTextarea1">Review Content</label>
-                                <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6" placeholder="Content"></textarea>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-block mw-md-300p">SUBMIT REVIEW</button>
-                        </form>
-                    </div>
+                                   </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- JAVASCRIPT
-    ================================================== -->
-    <!-- Libs JS -->
-        <script src="{% static 'assets/libs/jquery/dist/jquery.min.js' %}"></script>
-    <script src="{% static 'assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js' %}"></script>
-    <script src="{% static 'assets/libs/aos/dist/aos.js' %}"></script>
-    <script src="{% static 'assets/libs/choices.js/public/assets/scripts/choices.min.js' %}"></script>
-    <script src="{% static 'assets/libs/countup.js/dist/countUp.min.js' %}"></script>
-    <script src="{% static 'assets/libs/dropzone/dist/min/dropzone.min.js' %}"></script>
-    <script src="{% static 'assets/libs/flickity/dist/flickity.pkgd.min.js' %}"></script>
-    <script src="{% static 'assets/libs/flickity-fade/flickity-fade.js' %}"></script>
-    <script src="{% static 'assets/libs/highlightjs/highlight.pack.min.js' %}"></script>
-    <script src="{% static 'assets/libs/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
-    <script src="{% static 'assets/libs/isotope-layout/dist/isotope.pkgd.min.js' %}"></script>
-    <script src="{% static 'assets/libs/jarallax/dist/jarallax.min.js' %}"></script>
-    <script src="{% static 'assets/libs/jarallax/dist/jarallax-video.min.js' %}"></script>
-    <script src="{% static 'assets/libs/jarallax/dist/jarallax-element.min.js' %}"></script>
-    <script src="{% static 'assets/libs/parallax-js/dist/parallax.min.js' %}"></script>
-    <script src="{% static 'assets/libs/quill/dist/quill.min.js' %}"></script>
-    <script src="{% static 'assets/libs/smooth-scroll/dist/smooth-scroll.min.js' %}"></script>
-    <script src="{% static 'assets/libs/typed.js/lib/typed.min.js' %}"></script>
-
-    <!-- Map -->
-    <script src='../../../api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-
-    <!-- Theme JS -->
-    <script src="assets/js/theme.min.js"></script>
-
-
-</body>
-
-</html>
