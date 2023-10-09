@@ -17,7 +17,8 @@ urlpatterns = [
     path('checkout/<slug:slug>', views.checkout, name="checkout"),
    # path('accounts/register', )
     path('my-course', views.my_course, name='my-course'),
-    path('course/watch-course/<slug:slug>',views.watch_course, name='watch_course'),
+    #path('course/watch-course/<slug:slug>',views.watch_course, name='watch_course'),
+    path('course/watch-course/<slug:slug>/', views.watch_course, name='watch_course'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
