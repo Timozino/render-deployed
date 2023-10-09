@@ -190,7 +190,7 @@
                                             <i class="fa fa-youtube-play" aria-hidden="true" style="color:black"></i>
                                         </div>
                                         {% if check_enroll is not None%}
-                                         <a href="watch-course/{{course.slug}}?lecture={{course.id}}">
+                                         <a href="{% url 'watch_course' slug=lesson.course.slug %}?lecture={{ video.title }}">
                                             <div class ="ms-4" data-toggle="tooltip" title="Click to watch">
                                                 {{video.title}}
                                             {% comment %} </div> 
