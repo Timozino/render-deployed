@@ -11,9 +11,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="favicon.png">
+    <link rel="shortcut icon" href="{% static 'assets/img/technok/technok.png'%}">
 
     <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -37,7 +38,8 @@
     <link rel="stylesheet" href="{% static 'assets/css/theme.min.css' %}">
 
     <title>Watch - {{course.title}}</title>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7409348907351574"
+     crossorigin="anonymous"></script>
 </head>
 <body class="bg-white">
 
@@ -264,7 +266,7 @@
                                 <label for="modalForgotpasswordEmail">
                                     Email
                                 </label>
-                                <input type="email" class="form-control" id="modalForgotpasswordEmail" placeholder="johndoe@creativelayers.com">
+                                <input type="email" class="form-control" id="modalForgotpasswordEmail" placeholder="">
                             </div>
 
                             <!-- Submit -->
@@ -479,7 +481,7 @@
 
                                     </div>
                                 
-                                    <a href="?lecture={{video.id}}">
+                                    <a href="?lecture={{video.title}}">
                                     <div class="ms-4">
                                         {{video.title}}
                                     </div>
@@ -552,10 +554,10 @@
                     <div class="d-md-flex align-items-center justify-content-between mb-8">
                         <a href="#" class="btn btn-teal d-flex align-items-center text-white mb-5 mb-md-0 btn-block mw-md-280p justify-content-center">
                             <i class="fas fa-arrow-left font-size-xs"></i>
-                            <span class="ms-3">Introduction</span>
+                            <span class="ms-3">{{lesson.name}}</span>
                         </a>
                         <a href="#" class="btn btn-teal d-flex align-items-center text-white btn-block mw-md-280p justify-content-center mt-0">
-                            <span class="me-3">Structure of the course</span>
+                            <span class="me-3">{{video.title}}</span>
                             <i class="fas fa-arrow-right font-size-xs"></i>
                         </a>
                     </div>
