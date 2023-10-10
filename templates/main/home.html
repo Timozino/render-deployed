@@ -29,8 +29,16 @@
                     </p>
 
                     <!-- Buttons -->
+                    {% if user.is_authenticated%}
                     <a href="{% url 'home'%}" class="btn btn-tangerine btn-wide rounded-lg mb-4 mb-md-0 me-md-5 text-w" data-aos="fade-up" data-aos-duration="200">GET STARTED</a>
-                    <a href="{% url 'single_course'%}" class="btn btn-gigas btn-wide rounded-lg d-none d-lg-inline-block" data-aos="fade-up" data-aos-duration="200">VIEW COURSES</a>
+                    {% else %}
+                    <a href="{% url 'login'%}" class="btn btn-tangerine btn-wide rounded-lg mb-4 mb-md-0 me-md-5 text-w" data-aos="fade-up" data-aos-duration="200">GET STARTED</a>
+                    {%endif%}
+                    {% if user.is_authenticated%}
+                    <a href="{% url 'home'%}" class="btn btn-gigas btn-wide rounded-lg d-none d-lg-inline-block" data-aos="fade-up" data-aos-duration="200">VIEW COURSES</a>
+                    {% else %}
+                    <a href="{% url 'register'%}" class="btn btn-gigas btn-wide rounded-lg d-none d-lg-inline-block" data-aos="fade-up" data-aos-duration="200">VIEW COURSES</a>
+                    {%endif%}
                 </div>
             </div> <!-- / .row -->
         </div> <!-- / .container -->
