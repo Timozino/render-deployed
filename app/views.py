@@ -297,9 +297,3 @@ class AdBlockerMiddleware:
 def custom_not_found_view(request, exception=None):
     return redirect('error')
 
-def thanks(request):
-    return render(request, 'components/thanks.html')
-
-def thanks_a_lot(request):
-    return render(request, 'components/thanks-a-lot.html')
-
