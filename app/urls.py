@@ -19,6 +19,8 @@ urlpatterns = [
     path('my-course', views.my_course, name='my-course'),
     #path('course/watch-course/<slug:slug>',views.watch_course, name='watch_course'),
     path('course/watch-course/<slug:slug>/', views.watch_course, name='watch_course'),
+    path('appreciation/thanks/', views.thanks, name ='thanks'),
+    path('appreciation/thanks-a-lot/', views.thanks_a_lot, name ='thanks_a_lot'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
