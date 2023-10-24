@@ -23,17 +23,18 @@ import cloudinary.api
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY=os.environ.get("SECRET_KEY")
+#SECRET_KEY=os.environ.get("SECRET_KEY")
+SECRET_KEY="dskfjkdslaj,xfkjdkslaiu2435433333eqq309"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =os.environ.get("DEBUG","False").lower=="true"
 
 #ALLOWED_HOSTS =os.environ.get("ALLOWED_HOSTS").split(" ")
-ALLOWED_HOSTS =['technokraftz.com', 'www.technokraftz.com', 'technokraftz-academy.onrender.com']
+ALLOWED_HOSTS =['technokraftz.com', 'www.technokraftz.com']
 
 
 #CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split('')
-CSRF_TRUSTED_ORIGINS = ['technokraftz.com', 'www.technokraftz.com', 'technokraftz-academy.onrender.com']
+CSRF_TRUSTED_ORIGINS = ['technokraftz.com', 'www.technokraftz.com']
 
 
 
@@ -106,8 +107,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-database_url=os.environ.get("DATABASE_URL")
-DATABASES['default']=dj_database_url.parse(database_url)
+#database_url=os.environ.get("DATABASE_URL")
+#DATABASES['default']=dj_database_url.parse(database_url)
 
 # DATABASES = {
 #     'default': {
